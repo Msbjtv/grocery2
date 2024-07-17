@@ -46,9 +46,12 @@ const Cart = () => {
       const smsOrder = () => {
         const message = generateOrder(cartItems);
         const encodedMessage = encodeURIComponent(message);
-        window.location.href = `sms:${phoneNumber}?body=${encodedMessage}`;
+        const smsUrl = `sms:${phoneNumber}?body=${encodedMessage}`;
+        console.log('SMS URL:', smsUrl); // Debugging: Log the SMS URL
+        window.location.href = smsUrl;
         setConfMessage(true);
     };
+    
     
     const whatsappOrder = () => {
         const message = generateOrder(cartItems);
