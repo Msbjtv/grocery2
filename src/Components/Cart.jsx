@@ -46,7 +46,7 @@ const Cart = () => {
     const smsOrder=()=>{
         const message=generateOrder(cartItems)
         const encodedMessage = encodeURIComponent(message)
-        window.location.href=`sms:${phoneNumber}? body=${encodedMessage}`
+        window.location.href=`sms:${phoneNumber}?body=${encodedMessage}`
         setConfMessage(true)
     }
     const whatsappOrder = () => {
