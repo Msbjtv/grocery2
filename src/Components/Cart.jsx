@@ -43,12 +43,13 @@ const Cart = () => {
         return !/Mobi|Android/i.test(navigator.userAgent);
       }
       
-    const smsOrder=()=>{
-        const message=generateOrder(cartItems)
-        const encodedMessage = encodeURIComponent(message)
-        window.location.href=`sms:${phoneNumber}?body=${encodedMessage}`
-        setConfMessage(true)
-    }
+      const smsOrder = () => {
+        const message = generateOrder(cartItems);
+        const encodedMessage = encodeURIComponent(message);
+        window.location.href = `sms:${phoneNumber}?body=${encodedMessage}`;
+        setConfMessage(true);
+    };
+    
     const whatsappOrder = () => {
         const message = generateOrder(cartItems);
         const encodedMessage = encodeURIComponent(message);
