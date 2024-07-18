@@ -45,7 +45,7 @@ const Cart = () => {
       
       const smsOrder = () => {
         const message = generateOrder(cartItems);
-        navigator.clipboard.writeText(message)
+        
         const encodedMessage = encodeURIComponent(message);
         const smsUrl = `sms:${phoneNumber}?body=${encodedMessage}`;
         
@@ -109,14 +109,14 @@ const Cart = () => {
       </tbody>
     </table>
     <div className="m-4 flex justify-between">
-        {/* {isMobileDevice() &&
+        {isMobileDevice() &&
         (<button
           onClick={smsOrder}
           className="bg-teal-500 text-white px-4 sm:px-4 py-2 rounded"
         >
           SMS Order
-        </button>)} */}
-        {isMobileDevice() &&(
+        </button>)}
+        {isDesktopDevice() &&(
             <button
             onClick={whatsappOrder}
             className="bg-green-500 text-white px-1 sm:px-4 py-2 rounded"
