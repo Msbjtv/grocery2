@@ -109,13 +109,13 @@ const Cart = () => {
       </tbody>
     </table>
     <div className="m-4 flex justify-between">
-        {isMobileDevice() &&
+        {/* {isMobileDevice() &&
         (<button
           onClick={smsOrder}
           className="bg-teal-500 text-white px-4 sm:px-4 py-2 rounded"
         >
           SMS Order
-        </button>)}
+        </button>)} */}
         {isMobileDevice() &&(
             <button
             onClick={whatsappOrder}
