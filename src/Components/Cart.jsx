@@ -53,7 +53,17 @@ const Cart = () => {
         window.location.href = smsUrl;
         setConfMessage(true);
     };
-    
+    const copyOrderToClipboard = async () => {
+        const message = generateOrder(cartItems);
+        try {
+            await navigator.clipboard.writeText(message);
+            alert('Order copied to clipboard. Please paste it in your SMS app.');
+            setConfMessage(true);
+        } catch (error) {
+            console.error('Failed to copy:', error);
+            alert('Failed to copy order to clipboard. Please try again.');
+        }
+    };
     
     const whatsappOrder = () => {
         const message = generateOrder(cartItems);
@@ -116,6 +126,12 @@ const Cart = () => {
         >
           SMS Order
         </button>)}
+        <button
+            onClick={copyOrderToClipboard}
+            className="bg-teal-500 text-white px-4 sm:px-4 py-2 rounded"
+        >
+            Copy Order to Clipboard
+        </button>
         {isDesktopDevice() &&(
             <button
             onClick={whatsappOrder}
