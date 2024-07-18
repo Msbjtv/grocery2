@@ -116,7 +116,7 @@ const Cart = () => {
         >
           SMS Order
         </button>)}
-        {isDesktopDevice() &&(
+        {isMobileDevice() &&(
             <button
             onClick={whatsappOrder}
             className="bg-green-500 text-white px-1 sm:px-4 py-2 rounded"
