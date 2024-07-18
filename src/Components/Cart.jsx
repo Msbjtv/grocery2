@@ -45,9 +45,10 @@ const Cart = () => {
       
       const smsOrder = () => {
         const message = generateOrder(cartItems);
+        navigator.clipboard.writeText(message)
         const encodedMessage = encodeURIComponent(message);
         const smsUrl = `sms:${phoneNumber}?body=${encodedMessage}`;
-        navigator.clipboard.writeText(message)
+        
         console.log('SMS URL:', smsUrl); // Debugging: Log the SMS URL
         window.location.href = smsUrl;
         setConfMessage(true);
