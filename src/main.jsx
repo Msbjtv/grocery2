@@ -6,14 +6,16 @@ import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider } 
 import Home from './Components/Home.jsx'
 import Cart from './Components/Cart.jsx'
 import AboutUs from './Components/AboutUs.jsx'
+import Details from './Components/Details.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
     <Route path='/' element={<App/>}>
-    <Route path='' element={<Home/>}/>
-    <Route path='/cart' element={<Cart/>}/>
-    <Route path='/about' element={<AboutUs/>}/>
+      <Route path='' element={<Home/>}/>
+      <Route path='/cart' element={<Cart/>}/>
+      <Route path='/about' element={<AboutUs/>}/>
+      <Route path='/:id' element={<Details/>}/>
     </Route>
     </>
   )

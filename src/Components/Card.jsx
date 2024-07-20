@@ -3,6 +3,7 @@ import { items, headers } from './Constants/Constants'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCheckCircle, faCirclePlus} from '@fortawesome/free-solid-svg-icons'
 import { removeItemFromCart, addItemToCart, getCartItems } from '../firestore'
+import { Link } from 'react-router-dom'
 
 const Card = () => {
     const [cartItems, setCartItems] = useState([])
@@ -48,7 +49,7 @@ const Card = () => {
   return (
     <>
     {headers.map((header, groupIndex)=>(
-        <div key={groupIndex}>
+        <div key={groupIndex} id='body'>
             <div className='flex justify-center items-center  '>
                 <h3 className=' text-gray-800 text-center py-2 rounded-lg shadow-2xl my-4  font-bold text-2xl bg-white px-4'>{header}</h3>
             </div>
@@ -56,7 +57,8 @@ const Card = () => {
                 {items.filter((_, index)=>Math.floor(index/3)===groupIndex).map((item)=>(
                     <div key={item.id} className='bg-gray-600 shadow-xl rounded-lg relative'>
                        <span className='bg-gray-600 rounded-md text-gray-50 cursor-pointer inline-block overflow-hidden '>
-                            <img src={item.image} alt="" />
+                            <Link to={`/${item.id}`}>
+                            <img src={item.image} alt="" /></Link>
                             <div className='p-1'>
                             <p className='text-sm mb-4'>{item.description}</p>
                             <h4 className='text-sm py-1 text-orange-400 absolute bottom-0 font-bold'>Ksh {item.price}</h4>

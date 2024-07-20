@@ -5,7 +5,7 @@ import { faShoppingBasket, faCartShopping } from '@fortawesome/free-solid-svg-ic
 const Header = () => {
   return (
     <header className='bg-teal-500 text-white flex justify-between items-center py-2 w-full px-4'>
-        <h1>Welcome</h1>
+        <h1 className='font-extrabold text-gray-700'>W-g</h1>
         <nav >
             <ul className='flex font-medium items-center'>
                 <li>
